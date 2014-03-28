@@ -10,3 +10,20 @@ scala与erlang通信的组件。
 后续版本会修改其底层通信机制，非阻塞
 
 test，和demo将会在空余时间补上。
+
+
+
+
+
+
+test
+
+val node = OtpNode("realm@192.168.1.76")
+val mbox = node.createMbox("realm")
+while (true) {
+	mbox.receive() match {
+		case msg =>
+			println(msg)
+		case _ =>
+	}
+}
